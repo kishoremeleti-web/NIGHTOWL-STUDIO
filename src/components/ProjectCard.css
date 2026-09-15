@@ -1,0 +1,201 @@
+/* Project Card Styling */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--dur-fast) ease,
+              box-shadow var(--dur-fast) ease,
+              transform var(--dur-fast) var(--ease-sharp);
+  outline: none;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: var(--line-cobalt);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+              0 0 30px var(--cobalt-faint);
+  transform: translateY(-4px);
+}
+
+/* Image Container with Editorial Wipe & Crop */
+.project-card-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--ink);
+}
+
+.aspect-portrait {
+  aspect-ratio: 3/4;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16/10;
+}
+
+.aspect-panoramic {
+  aspect-ratio: 21/9;
+}
+
+.aspect-square {
+  aspect-ratio: 1/1;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.65s var(--ease-editorial),
+              filter 0.5s ease;
+}
+
+.project-card:hover .project-card-img,
+.project-card:focus-visible .project-card-img {
+  transform: scale(1.06);
+}
+
+/* Duotone / Cobalt Tint Overlay */
+.project-card-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 8, 17, 0.1) 0%, rgba(5, 8, 17, 0.7) 100%);
+  opacity: 0.85;
+  transition: opacity 0.4s ease, background 0.4s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .project-card-tint,
+.project-card:focus-visible .project-card-tint {
+  background: linear-gradient(180deg, rgba(37, 84, 255, 0.15) 0%, rgba(5, 8, 17, 0.88) 100%);
+  opacity: 0.95;
+}
+
+/* Floating Corner Print Coordinates */
+.project-card-coords {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(5, 8, 17, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ice);
+  letter-spacing: 0.05em;
+  z-index: 2;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.project-card:hover .project-card-coords {
+  transform: translateX(4px);
+  border-color: var(--cobalt);
+}
+
+/* Hover Action Badge */
+.project-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background-color: var(--cobalt);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.95);
+  transition: all 0.35s var(--ease-spring);
+  box-shadow: 0 4px 14px var(--cobalt-glow);
+}
+
+.project-card:hover .project-card-badge,
+.project-card:focus-visible .project-card-badge {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Floating Dimensions Pill */
+.project-card-dim {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.55rem;
+  background: rgba(5, 8, 17, 0.8);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  z-index: 2;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover .project-card-dim {
+  color: var(--ice);
+  border-color: var(--line-cobalt);
+}
+
+/* Card Content / Typography */
+.project-card-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.project-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.project-card-category {
+  color: var(--ice);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.project-card-title {
+  font-family: var(--font-headline);
+  font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+  font-weight: 700;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease, letter-spacing 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card:hover .project-card-title {
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.project-card-desc {
+  font-size: 0.85rem;
+  color: var(--ice-dim);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,90 @@
+/* Process Section Timeline */
+.process-section {
+  position: relative;
+  border-top: 1px solid var(--line);
+  background-color: var(--surface);
+}
+
+.process-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .process-track {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.process-step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  background-color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  min-height: 280px;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-sharp);
+}
+
+.process-step-card:hover {
+  border-color: var(--cobalt);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.process-step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.process-step-num {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--cobalt);
+}
+
+.process-step-duration {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.process-step-title {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.process-step-desc {
+  font-size: 0.85rem;
+  color: var(--ice-dim);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.process-step-action {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ice);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

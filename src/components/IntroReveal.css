@@ -1,0 +1,110 @@
+/* Intro Preloader Animation */
+.intro-curtain {
+  position: fixed;
+  inset: 0;
+  background-color: var(--ink);
+  z-index: var(--z-intro);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  pointer-events: all;
+  transition: clip-path 0.75s var(--ease-editorial), opacity 0.5s ease;
+  clip-path: inset(0 0 0 0);
+}
+
+.intro-curtain.intro-exiting {
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+.intro-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.intro-center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intro-title-wrapper {
+  overflow: hidden;
+}
+
+.intro-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--paper);
+  line-height: 1.1;
+  transform: translateY(110%);
+  animation: introTextReveal 0.65s var(--ease-editorial) 0.1s forwards;
+}
+
+.intro-accent-bar {
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cobalt), var(--ice));
+  animation: introLineGrow 0.7s var(--ease-editorial) 0.25s forwards;
+}
+
+.intro-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.intro-status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--cobalt);
+  box-shadow: 0 0 8px var(--cobalt);
+  animation: blinkLive 1.2s infinite ease-in-out;
+}
+
+.intro-skip-btn {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: all var(--dur-fast) ease;
+}
+
+.intro-skip-btn:hover {
+  border-color: var(--ice);
+  color: var(--paper);
+}
+
+@keyframes introTextReveal {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes introLineGrow {
+  to {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-curtain {
+    display: none !important;
+  }
+}

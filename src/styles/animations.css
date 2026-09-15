@@ -1,0 +1,206 @@
+/* Animation Keyframes & Motion Classes */
+
+@keyframes textRevealUp {
+  0% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes maskWipeUp {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes maskWipeRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes lineDrawX {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+@keyframes lineDrawY {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top center;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUpBadge {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+  }
+  70% {
+    transform: scale(1.04) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeScrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shutterOut {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+@keyframes blinkLive {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #2554ff;
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: 0 0 2px #2554ff;
+  }
+}
+
+/* Reusable animation utilities */
+.anim-mask-reveal {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.anim-mask-reveal > * {
+  display: inline-block;
+  animation: textRevealUp var(--dur-reveal) var(--ease-editorial) forwards;
+}
+
+.anim-fade-in {
+  animation: fadeIn var(--dur-base) var(--ease-editorial) forwards;
+}
+
+.anim-badge-pop {
+  animation: popUpBadge var(--dur-fast) var(--ease-spring) forwards;
+}
+
+/* Scroll reveal states */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease-editorial),
+              transform var(--dur-slow) var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-mask-init {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path var(--dur-reveal) var(--ease-editorial);
+  will-change: clip-path;
+}
+
+.reveal-mask-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+.reveal-line-init {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-slow) var(--ease-editorial);
+}
+
+.reveal-line-visible {
+  transform: scaleX(1);
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init,
+  .reveal-mask-init,
+  .reveal-line-init {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .anim-mask-reveal > * {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

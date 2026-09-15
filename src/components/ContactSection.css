@@ -1,0 +1,197 @@
+/* Contact Section Poster Layout */
+.contact-section {
+  position: relative;
+  background-color: var(--ink);
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.contact-poster-frame {
+  position: relative;
+  background-color: var(--surface);
+  border: 1px solid var(--line-strong);
+  padding: clamp(2rem, 6vw, 5rem);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* Ambient Corner Registration Markers */
+.contact-reg-tl { position: absolute; top: 1.5rem; left: 1.5rem; }
+.contact-reg-tr { position: absolute; top: 1.5rem; right: 1.5rem; }
+.contact-reg-bl { position: absolute; bottom: 1.5rem; left: 1.5rem; }
+.contact-reg-br { position: absolute; bottom: 1.5rem; right: 1.5rem; }
+
+.contact-headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--paper);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.contact-headline span.accent {
+  color: var(--cobalt);
+  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4.5rem;
+  }
+}
+
+/* Interactive Brief Form */
+.brief-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.brief-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.brief-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.brief-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(5, 8, 17, 0.6);
+  color: var(--ice-dim);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--dur-fast) ease;
+}
+
+.brief-pill:hover {
+  border-color: var(--ice);
+  color: var(--paper);
+}
+
+.brief-pill.selected {
+  background-color: var(--cobalt);
+  color: #ffffff;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 14px var(--cobalt-glow);
+}
+
+.brief-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.brief-input:focus {
+  border-color: var(--cobalt);
+  box-shadow: 0 0 15px var(--cobalt-faint);
+}
+
+/* Right Direct Info Box */
+.direct-info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.25rem;
+  background-color: var(--ink);
+  border: 1px solid var(--line-cobalt);
+  border-radius: 2px;
+}
+
+.direct-link-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.direct-link-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.direct-link-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.direct-link-val {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  color: var(--paper);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--dur-fast) ease;
+}
+
+.direct-link-val:hover {
+  color: var(--ice);
+}
+
+.socials-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.social-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ice-dim);
+  border-radius: 2px;
+  transition: all var(--dur-fast) ease;
+}
+
+.social-pill-link:hover {
+  border-color: var(--cobalt);
+  color: #ffffff;
+  background-color: rgba(37, 84, 255, 0.1);
+}
