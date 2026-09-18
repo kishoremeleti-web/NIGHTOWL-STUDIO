@@ -1,25 +1,33 @@
 :root {
-  /* Color System */
-  --ink: #050811;
-  --surface: #0a0f1d;
-  --surface-card: #0f172a;
-  --surface-card-hover: #15223c;
-  --surface-overlay: rgba(5, 8, 17, 0.92);
-  
-  --cobalt: #2554ff;
-  --cobalt-dark: #193ec4;
-  --cobalt-glow: rgba(37, 84, 255, 0.4);
-  --cobalt-faint: rgba(37, 84, 255, 0.12);
-  
-  --ice: #d4e4ff;
-  --ice-dim: rgba(212, 228, 255, 0.7);
-  --paper: #f1f3f9;
-  --muted: #687999;
-  --muted-dark: #37435b;
-  
-  --line: rgba(212, 228, 255, 0.12);
-  --line-strong: rgba(212, 228, 255, 0.24);
-  --line-cobalt: rgba(37, 84, 255, 0.35);
+  /* ═══════════════════════════════════════════════
+     COLOR SYSTEM — Burgundy × Beige Editorial Palette
+     Primary: Deep Burgundy  |  Accent: Warm Beige
+  ═══════════════════════════════════════════════ */
+
+  /* Backgrounds — Near-black with warm burgundy undertone */
+  --ink: #0B0205;
+  --surface: #140408;
+  --surface-card: #1E0610;
+  --surface-card-hover: #280B18;
+  --surface-overlay: rgba(11, 2, 5, 0.94);
+
+  /* Primary Accent — Rich Burgundy */
+  --cobalt: #8C1A30;
+  --cobalt-dark: #6A1025;
+  --cobalt-glow: rgba(140, 26, 48, 0.50);
+  --cobalt-faint: rgba(140, 26, 48, 0.13);
+
+  /* Secondary Accent — Warm Beige / Champagne */
+  --ice: #C4A882;
+  --ice-dim: rgba(196, 168, 130, 0.70);
+  --paper: #F3EBE0;
+  --muted: #8A7260;
+  --muted-dark: #4D3428;
+
+  /* Borders & Dividers */
+  --line: rgba(196, 168, 130, 0.10);
+  --line-strong: rgba(196, 168, 130, 0.22);
+  --line-cobalt: rgba(140, 26, 48, 0.40);
 
   /* Minimal Sleek Typography */
   --font-headline: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;

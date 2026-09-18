@@ -117,11 +117,11 @@
 @keyframes blinkLive {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 8px #2554ff;
+    box-shadow: 0 0 8px #8C1A30;
   }
   50% {
     opacity: 0.3;
-    box-shadow: 0 0 2px #2554ff;
+    box-shadow: 0 0 2px #8C1A30;
   }
 }
 

@@ -1,13 +1,13 @@
 import type { Project, ServiceItem, ProcessStep, StudioInfo } from '../types';
 
 export const studioInfo: StudioInfo = {
-  designerName: "[DESIGNER NAME]",
+  designerName: "Varaprasad",
   studioName: "NIGHTOWL",
-  tagline: "[TAGLINE]",
+  tagline: "Art Direction. Print Mastery. Visual Impact.",
   location: "[CITY, COUNTRY]",
-  email: "[EMAIL ADDRESS]",
-  phone: "[PHONE NUMBER]",
-  instagramUrl: "[INSTAGRAM URL]",
+  email: "nightowldesigner26@gmail.com",
+  phone: "+91 90102 75676",
+  instagramUrl: "https://www.instagram.com/_NIGHT_OWL_THINK_OF_MOTLF",
   behanceUrl: "[BEHANCE URL]",
   whatsappUrl: "[WHATSAPP URL]",
   availability: "Available for select projects",
