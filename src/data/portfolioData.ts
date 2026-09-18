@@ -7,7 +7,7 @@ export const studioInfo: StudioInfo = {
   location: "[CITY, COUNTRY]",
   email: "nightowldesigner26@gmail.com",
   phone: "+91 90102 75676",
-  instagramUrl: "https://www.instagram.com/_NIGHT_OWL_THINK_OF_MOTLF",
+  instagramUrl: "https://www.instagram.com/_NIGHT_OWL_THINK_OF_MOTIF_",
   behanceUrl: "[BEHANCE URL]",
   whatsappUrl: "[WHATSAPP URL]",
   availability: "Available for select projects",
